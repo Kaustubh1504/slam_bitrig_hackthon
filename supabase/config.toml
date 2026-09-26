@@ -1,0 +1,28 @@
+# Minimal Supabase CLI config; anything not listed uses the CLI defaults.
+project_id = "slam"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+
+[db]
+port = 54322
+major_version = 17
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[realtime]
+enabled = true
+
+[storage]
+enabled = true
+
+[edge_runtime]
+enabled = true
+# per_worker keeps the worker alive after the response so EdgeRuntime.waitUntil
+# (background cover-art generation) finishes during local development.
+policy = "per_worker"
+deno_version = 2
